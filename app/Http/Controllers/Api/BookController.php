@@ -80,7 +80,7 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      *
      * @OA\Post(
-     *     path="/books",
+     *     path="/admin/books",
      *     tags={"Books"},
      *     summary="Create new book (admin only)",
      *     description="Create book baru dengan validasi",
@@ -184,7 +184,7 @@ class BookController extends Controller
      * Update resource yang ditentukan di storage.
      *
      * @OA\Put(
-     *     path="/books/{id}",
+     *     path="/admin/books/{id}",
      *     tags={"Books"},
      *     summary="Update book by ID (admin only)",
      *     description="Update book berdasarkan ID dengan validasi",
@@ -259,7 +259,7 @@ class BookController extends Controller
      * Hapus resource yang ditentukan dari storage.
      *
      * @OA\Delete(
-     *     path="/books/{id}",
+     *     path="/admin/books/{id}",
      *     tags={"Books"},
      *     summary="Delete book by ID (admin only)",
      *     description="Delete book berdasarkan ID (tidak bisa dihapus jika sedang dipinjam)",

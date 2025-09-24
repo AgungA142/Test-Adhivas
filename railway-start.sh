@@ -204,7 +204,7 @@ php artisan view:cache
 # Final diagnostics
 echo "=== FINAL DIAGNOSTICS ==="
 echo "Available routes containing 'doc' or 'swagger':"
-php artisan route:list | grep -i -E "(doc|swagger)" || echo "No documentation routes found"
+php artisan route:list
 
 echo "L5Swagger configuration:"
 php artisan config:show l5-swagger.default 2>/dev/null | head -n 10 || echo "L5Swagger config not accessible"
@@ -217,11 +217,6 @@ PORT=${PORT:-8000}
 
 echo "=== STARTING SERVER ==="
 echo "Server starting on port $PORT..."
-echo "Expected URLs:"
-echo "  - Main app: https://test-adhivas-production.up.railway.app/"
-echo "  - API docs: https://test-adhivas-production.up.railway.app/api/documentation"
-echo "  - JSON docs: https://test-adhivas-production.up.railway.app/docs/api-docs.json"
-echo "  - Health: https://test-adhivas-production.up.railway.app/api/health"
 
 # Start PHP built-in server
 php artisan serve --host=0.0.0.0 --port=$PORT

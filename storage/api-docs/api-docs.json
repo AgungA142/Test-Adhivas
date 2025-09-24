@@ -385,14 +385,16 @@
                         "bearerAuth": []
                     }
                 ]
-            },
+            }
+        },
+        "/admin/books": {
             "post": {
                 "tags": [
                     "Books"
                 ],
                 "summary": "Create new book (admin only)",
                 "description": "Create book baru dengan validasi",
-                "operationId": "7ab92284110ace5d0f7de52f372e70c0",
+                "operationId": "65b32f0d592f158cd1f9b84f0059d488",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -497,14 +499,16 @@
                         "bearerAuth": []
                     }
                 ]
-            },
+            }
+        },
+        "/admin/books/{id}": {
             "put": {
                 "tags": [
                     "Books"
                 ],
                 "summary": "Update book by ID (admin only)",
                 "description": "Update book berdasarkan ID dengan validasi",
-                "operationId": "b47b1606570ba86a105bf62f04de6b7f",
+                "operationId": "89b3ee9474b10608913f3ae7d24fa5de",
                 "parameters": [
                     {
                         "name": "id",
@@ -573,7 +577,7 @@
                 ],
                 "summary": "Delete book by ID (admin only)",
                 "description": "Delete book berdasarkan ID (tidak bisa dihapus jika sedang dipinjam)",
-                "operationId": "95c7fc7d78f9dc3884a5bb898b7ead11",
+                "operationId": "cf62f713ee402b1f16a9fcf09cc85e3b",
                 "parameters": [
                     {
                         "name": "id",
