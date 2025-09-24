@@ -90,9 +90,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::prefix('users')->group(function () {
             Route::get('/', [UserController::class, 'index']); // Lihat semua user
             Route::post('/', [UserController::class, 'store']); // Tambah user baru - hanya admin
-            Route::get('/{id}', [UserController::class, 'show']); // Lihat detail user
-            Route::put('/{id}', [UserController::class, 'update']); // Update user
-            Route::delete('/{id}', [UserController::class, 'destroy']); // Hapus user
         });
 
         // Manajemen pinjaman - admin bisa lihat semua pinjaman
@@ -100,6 +97,12 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('/', [BookLoanController::class, 'getAllLoans']); // Lihat semua pinjaman
             Route::get('/user/{user_id}', [BookLoanController::class, 'getUserLoans']); // Lihat pinjaman user tertentu
         });
+    });
+
+    Route::prefix('/users')->group(function () {
+            Route::get('/{id}', [UserController::class, 'show']); // Lihat detail user
+            Route::put('/{id}', [UserController::class, 'update']); // Update user
+            Route::delete('/{id}', [UserController::class, 'destroy']); // Hapus user
     });
 
     // Route untuk mendapatkan user yang terautentikasi

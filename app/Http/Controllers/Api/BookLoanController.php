@@ -180,7 +180,7 @@ class BookLoanController extends Controller
      * Mendapatkan buku yang dipinjam user.
      *
      * @OA\Get(
-     *     path="/loans/{user_id}",
+     *     path="/admin/loans/{user_id}",
      *     tags={"Book Loans"},
      *     summary="Get user's borrowed books by user ID",
      *     description="Daftar buku yang sedang dipinjam oleh user",
@@ -334,7 +334,7 @@ class BookLoanController extends Controller
      * Get all loans (admin only).
      *
      * @OA\Get(
-     *     path="/loans",
+     *     path="/admin/loans",
      *     tags={"Book Loans"},
      *     summary="Get all loans (admin only)",
      *     description="Daftar semua peminjaman buku (admin only)",

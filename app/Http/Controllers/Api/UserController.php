@@ -14,7 +14,7 @@ class UserController extends Controller
      * Menampilkan daftar resource.
      *
      * @OA\Get(
-     *     path="/users",
+     *     path="/admin/users",
      *     tags={"Users"},
      *     summary="Get all users",
      *     description="Retrieve semua users",
@@ -60,7 +60,7 @@ class UserController extends Controller
      * Simpan resource yang baru dibuat di storage.
      *
      * @OA\Post(
-     *     path="/users",
+     *     path="/admin/users",
      *     tags={"Users"},
      *     summary="Create new user (admin only)",
      *     description="Create user baru",

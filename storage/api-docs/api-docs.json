@@ -642,92 +642,6 @@
             }
         },
         "/loans": {
-            "get": {
-                "tags": [
-                    "Book Loans"
-                ],
-                "summary": "Get all loans (admin only)",
-                "description": "Daftar semua peminjaman buku (admin only)",
-                "operationId": "baf3364ec5b1a481a6bc6e3791ae38b7",
-                "parameters": [
-                    {
-                        "name": "status",
-                        "in": "query",
-                        "description": "Filter by loan status",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "borrowed",
-                                "returned",
-                                "overdue",
-                                "all"
-                            ]
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "in": "query",
-                        "description": "Page number for pagination",
-                        "schema": {
-                            "type": "integer",
-                            "example": 1
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Loans retrieved successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "status": {
-                                            "type": "string",
-                                            "example": "success"
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Loans retrieved successfully"
-                                        },
-                                        "data": {
-                                            "type": "object"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "403": {
-                        "description": "Admin access required",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "properties": {
-                                        "status": {
-                                            "type": "string",
-                                            "example": "error"
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Admin access required"
-                                        }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "401": {
-                        "$ref": "#/components/responses/Unauthenticated"
-                    }
-                },
-                "security": [
-                    {
-                        "bearerAuth": []
-                    }
-                ]
-            },
             "post": {
                 "tags": [
                     "Book Loans"
@@ -870,14 +784,14 @@
                 ]
             }
         },
-        "/loans/{user_id}": {
+        "/admin/loans/{user_id}": {
             "get": {
                 "tags": [
                     "Book Loans"
                 ],
                 "summary": "Get user's borrowed books by user ID",
                 "description": "Daftar buku yang sedang dipinjam oleh user",
-                "operationId": "18af5a12170954111478e6d53be058cc",
+                "operationId": "7c74ff765e6dc2c42f3dde61a1c7faba",
                 "parameters": [
                     {
                         "name": "user_id",
@@ -1023,14 +937,102 @@
                 ]
             }
         },
-        "/users": {
+        "/admin/loans": {
+            "get": {
+                "tags": [
+                    "Book Loans"
+                ],
+                "summary": "Get all loans (admin only)",
+                "description": "Daftar semua peminjaman buku (admin only)",
+                "operationId": "740eec257ee172c5bb5d56fc32462b96",
+                "parameters": [
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "description": "Filter by loan status",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "borrowed",
+                                "returned",
+                                "overdue",
+                                "all"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number for pagination",
+                        "schema": {
+                            "type": "integer",
+                            "example": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Loans retrieved successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "success"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Loans retrieved successfully"
+                                        },
+                                        "data": {
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Admin access required",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "error"
+                                        },
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Admin access required"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "$ref": "#/components/responses/Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/admin/users": {
             "get": {
                 "tags": [
                     "Users"
                 ],
                 "summary": "Get all users",
                 "description": "Retrieve semua users",
-                "operationId": "7208c29037df2b8bb02499ba39ed8a78",
+                "operationId": "3933ad00462a4f6b0cd0f7b9158089bc",
                 "responses": {
                     "200": {
                         "description": "Users retrieved successfully",
@@ -1109,7 +1111,7 @@
                 ],
                 "summary": "Create new user (admin only)",
                 "description": "Create user baru",
-                "operationId": "262eb5ca1fdea354023c0a8870442c1e",
+                "operationId": "21b0dd137a5355f3d6194d3d16d38ee1",
                 "requestBody": {
                     "required": true,
                     "content": {
