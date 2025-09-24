@@ -56,6 +56,6 @@ Sebelum menjalankan proyek ini, pastikan Anda telah menginstal:
   php artisan test
   ```
 
-- Untuk Route admin bisa menggunakan akun:
-email : admin@example.com
-password : password
+- Untuk Route admin bisa menggunakan akun berikut:
+  - Email: `admin@example.com`
+  - Password: `password`
